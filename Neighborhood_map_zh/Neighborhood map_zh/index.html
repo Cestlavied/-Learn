@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>Neighborhood map</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+    <div class="page-header">
+        <h1>Neighborhood&nbsp;&nbsp;&nbsp;&nbsp;<small>map</small></h1>
+    </div>
+    <div class="container">
+        <div class="col-md-2">
+            <input type="text" id="filterInput" data-bind="textInput:filterText" placeholder="Search for names...">
+            <ul id="filter" data-bind="foreach:filteredList" class="list-group">
+              <li class="list-group-item result" data-bind="text:title, click:$parent.listClick" ></li>
+            </ul>
+        </div>
+        <div class="col-md-10 map" id="map" style="min-height: 500px;"></div>
+    </div>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/knockout-3.4.2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script defer="defer" src="js/app.js"></script>
+    <script async defer src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyCoxcb6Blia9PD7RWVuvsndj5R_Xzf2hCY&callback=start" onerror="mapError()"></script>
+    </body>
+</html>
